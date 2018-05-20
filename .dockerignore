@@ -4,5 +4,6 @@
 !yarn.lock
 !src/
 !static/
+!build/
 !tsconfig.json
 !webpack.config.js
