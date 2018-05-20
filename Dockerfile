@@ -1,14 +1,15 @@
 FROM node:10.1.0-alpine AS builder
 WORKDIR /usr/src/app
 
-COPY tsconfig.json ./
-COPY webpack.config.js ./
 COPY package.json ./
 COPY yarn.lock ./
-COPY static/ ./static/
-COPY src/ ./src/
 
 RUN yarn install --frozen-lockfile
+
+COPY tsconfig.json ./
+COPY webpack.config.js ./
+COPY static/ ./
+COPY src/ ./
 
 FROM builder AS bundled
 RUN yarn run build
