@@ -8,8 +8,8 @@ RUN yarn install --frozen-lockfile
 
 COPY tsconfig.json ./
 COPY webpack.config.js ./
-COPY static/ ./
-COPY src/ ./
+COPY static/ ./static/
+COPY src/ ./src/
 
 FROM builder AS bundled
 RUN yarn run build
@@ -17,4 +17,4 @@ RUN yarn run build
 FROM scratch
 WORKDIR /usr/src/app
 
-COPY --from=bundled /usr/src/app/static/ ./
+COPY --from=bundled /usr/src/app/static/ ./static/
