@@ -1,8 +1,8 @@
 {
   "name": "@federation/enterprise-web",
   "version": "0.0.1",
-  "main": "lib/index",
-  "types": "lib/index.d.ts",
+  "main": "build/index",
+  "types": "build/index.d.ts",
   "repository": "https://github.com/federation/enterprise-web",
   "author": "Jorge Israel Peña <jorge.israel.p@gmail.com>",
   "license": "MIT",
