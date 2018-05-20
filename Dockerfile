@@ -14,4 +14,5 @@ RUN yarn run build
 FROM scratch
 WORKDIR /usr/src/app
 
+COPY --from=builder /usr/src/app/static/ ./static
 COPY --from=builder /usr/src/app/build/ ./build
