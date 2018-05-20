@@ -11,7 +11,7 @@ COPY src/ ./src/
 RUN yarn install --frozen-lockfile
 RUN yarn run build
 
-FROM builder
+FROM scratch
 WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app/build/ ./build
