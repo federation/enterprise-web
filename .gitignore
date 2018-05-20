@@ -1,4 +1,5 @@
 node_modules/
-build/
+static/scripts/bundle.js
+static/scripts/bundle.js.map
 docs/
 coverage/
