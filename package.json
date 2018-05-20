@@ -1,0 +1,64 @@
+{
+  "name": "@federation/enterprise-web",
+  "version": "0.0.1",
+  "main": "lib/index",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/federation/enterprise-web",
+  "author": "Jorge Israel Peña <jorge.israel.p@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "coverage": "jest --coverage --colors",
+    "docs": "typedoc --out docs/ src/",
+    "lint": "tslint -c ./tslint.json --project ."
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
+    "@types/enzyme-to-json": "^1.5.1",
+    "@types/jest": "^22.2.3",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^22.4.3",
+    "source-map-loader": "^0.2.3",
+    "ts-jest": "^22.4.5",
+    "ts-loader": "^4.3.0",
+    "tslint": "^5.10.0",
+    "tslint-react": "^3.6.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupEnzyme.ts",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*"
+    ]
+  }
+}

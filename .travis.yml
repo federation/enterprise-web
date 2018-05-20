@@ -1,0 +1,23 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker --version
+
+install:
+  - docker build --target builder -t fedtech/enterprise-web:test .
+
+script:
+  - mkdir coverage
+  - docker run -v "$PWD/coverage:/usr/src/app/coverage" fedtech/enterprise-web:test yarn run coverage
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -s coverage
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  # TODO
+  # Update once the final image is added.
+  # - docker build -t fedtech/enterprise-web:latest .
+  - docker push fedtech/enterprise-web:latest

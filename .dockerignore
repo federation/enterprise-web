@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!package.json
+!yarn.lock
+!src/
+!static/
+!tsconfig.json
+!webpack.config.js
