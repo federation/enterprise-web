@@ -6,6 +6,7 @@ COPY tsconfig.json ./
 COPY webpack.config.js ./
 COPY package.json ./
 COPY yarn.lock ./
+COPY static/ ./static/
 COPY src/ ./src/
 
 RUN yarn install --frozen-lockfile
