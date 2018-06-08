@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "watch": "webpack --watch",
     "test": "jest",
     "coverage": "jest --coverage --colors",
     "docs": "typedoc --out docs/ src/",
