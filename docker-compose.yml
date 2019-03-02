@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  web:
+    build:
+      context: .
+      target: builder
+    image: fedtech/enterprise-web:dev
+    command: ["yarn", "start"]
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/usr/src/app
